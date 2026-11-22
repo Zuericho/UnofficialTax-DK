@@ -6,8 +6,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Aarsopgoerelse.Views.MainWindow"
         x:DataType="vm:MainViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="Aarsopgoerelse">
+        Icon="/Assets/aarsopgoerelse_128x128.ico"
+        Title="Den Uofficielle Årsopgørelse">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -15,8 +15,6 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <TextBox Text="{Binding Greeting}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
+    <ContentControl x:Name="SideIndhold" />
 
 </Window>

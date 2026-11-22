@@ -1,6 +1,8 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="Aarsopgoerelse.Views.Indtastningsside">
+             xmlns:vm="using:Aarsopgoerelse.ViewModels"
+             x:Class="Aarsopgoerelse.Views.Indtastningsside"
+             x:DataType="vm:IndtastningssideViewModel">
 
     <Grid Margin="55,90,55,55"
           RowDefinitions="*,Auto">
@@ -22,22 +24,22 @@
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Løn før skat og AM-bidrag:"
                                VerticalAlignment="Center"/>
-                    <TextBox x:Name="LonFoerSkatOgAM"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="BruttoLoen"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="AM-bidrag:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="AMBidrag"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="A-Skat:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="ASkat"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <TextBlock Text="Pensioner, dagpenge, stipendier m.v."
@@ -49,51 +51,51 @@
                     <TextBlock Text="A-kasse dagpenge:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="AKasseDagpenge"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Feriedagpenge:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="Feriedagpenge"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Sygedagpenge:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="Sygedagpenge"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Kontanthjælp:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="Kontanthjaelp"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Efterløn:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="Efterloen"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Statens VoksenUddannelsesstøtte:"
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
-                    <TextBox x:Name="StatensVoksenUddannelsesstoette"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="SVU"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Statens Uddannelsesstøtte:"
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
-                    <TextBox x:Name="StatensUddannelsesstoette"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="SU"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
             </StackPanel>
@@ -112,31 +114,31 @@
                     <TextBlock Text="Arbejdsgiveradministreret pension:"
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
-                    <TextBox x:Name="ArbejdsgiveradministreretPension"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="ArbejdsgiverPension"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="ATP via arbejdsgiver:"
                                VerticalAlignment="Center"/>
-                    <TextBox x:Name="ATPViaArbejdsgiver"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="ATPAMBidragsPligt"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="ATP som ikke er fra arbejdsgiver:"
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
-                    <TextBox x:Name="ATPUdenArbejdsgiver"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="ATPIkkeAMBidragsPligt"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Egen indbetaling uden om arbejdsgiver:"
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
-                    <TextBox x:Name="EgenIndbetaling"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="PensionsindbetalingAfBeskattedeMidler"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <TextBlock Text="Anden personlig indkomst:"
@@ -148,31 +150,31 @@
                     <TextBlock Text="Gruppelivsforsikring via fagforening:"
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
-                    <TextBox x:Name="GruppeLivsforsikring"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="GruppelivsForsikring"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Legater og bestemte personalegoder:"
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
-                    <TextBox x:Name="Legater"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="LegaterOgPersonalegoder"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Indskud til aldersopsparing via arbejde:"
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
-                    <TextBox x:Name="IndskudAldersopsparing"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="IndskudAldersopsparingViaArbejdsgiver"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Eventuelt andet:"
                                VerticalAlignment="Center"/>
-                    <TextBox x:Name="EventueltAndet"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="AndetPersonligIndkomst"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <TextBlock Text="Kapitalindkomst:"
@@ -185,7 +187,7 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="Renteindtaegter"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
             </StackPanel>
@@ -205,7 +207,7 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="FitnessMusikskole"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
@@ -213,61 +215,65 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="AfstandArbejde"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Antal dage kørt på arbejde:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="AntalDageKoert"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Kontingent til fagforening:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="KontingentFagforening"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Kontingent til A-kasse:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="KontingentAKasse"
-                             Grid.Column="1" Height="26"/>
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Gaver til godkendte foreninger:"
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
-                    <TextBox x:Name="GaverForeninger"
-                             Grid.Column="1" Height="26"/>
+                    <TextBox x:Name="GaverTilForeninger"
+                             Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
-                <!-- De to felter, der ikke skal valideres -->
+                <!-- De to felter, der valideres særskilt -->
                 <StackPanel Margin="0,75,0,0"
                             Spacing="12">
 
-                    <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                         <TextBlock Text="Bopælskommune 5. sept. Sidste år:"
                                    FontWeight="Bold"
                                    TextDecorations="Underline"
                                    VerticalAlignment="Center"
                                    TextWrapping="Wrap"/>
-                        <TextBox x:Name="Bopaelskommune"
-                                 Grid.Column="1" Height="26"/>
-                    </Grid>
+                        <ComboBox
+                            x:Name="KommuneComboBox"
+                            PlaceholderText="Vælg kommune"
+                            Width="250"
+                            HorizontalAlignment="Left"/>
 
-                    <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                         <TextBlock Text="Er du medlem af folkekirken?"
                                    FontWeight="Bold"
                                    TextDecorations="Underline"
                                    VerticalAlignment="Center"
                                    TextWrapping="Wrap"/>
-                        <TextBox x:Name="MedlemFolkekirken"
-                                 Grid.Column="1" Height="26"/>
-                    </Grid>
+                        <ComboBox x:Name="KirkeskatComboBox"
+                            ItemsSource="{Binding KirkeskatValgmuligheder}"
+                            SelectedItem="{Binding ValgtKirkeskat}"
+                            PlaceholderText="Vælg"
+                            Width="250"
+                            HorizontalAlignment="Left">
+                        </ComboBox>
 
                 </StackPanel>
 
@@ -275,16 +281,27 @@
 
         </Grid>
 
-
+        <!--TextBlock udelukkende til at teste i stedet for at skrive til Console-->
+        <TextBlock x:Name="lblResultat"
+                        IsVisible="False"
+                        Text="Test"
+                        FontSize="28"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"/>
+        
         <!-- KNAP NEDERST TIL HØJRE -->
         <Button Grid.Row="1"
                 x:Name="VisAarsopgoerelseButton"
-                Content="Vis min uofficielle Årsopgørelse"
+                Content="{Binding VisAarsopgoerelse}"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 Width="160"
-                Height="34"
+                Height="60"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
-                Margin="0,20,0,0"/>
+                Margin="0,20,0,0"
+                Click="VisAarsopgoerelse_Click"/>
 
     </Grid>
 
