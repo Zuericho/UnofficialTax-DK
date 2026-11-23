@@ -2,7 +2,9 @@
 using System.Linq;
 using System.Collections.Generic;
 using System;
-public static class Kommuneskat
+
+namespace Aarsopgoerelse.Services;
+public static class KommuneskatSatser
 {
 
 private static readonly Dictionary<string,
@@ -121,6 +123,21 @@ private static readonly Dictionary<string,
         return Satser.TryGetValue(kommunenavn, out var satser)
             ? satser.Kirke
             : 0m;
+    }
+
+    public static decimal HighestKirkeskat()
+    {
+        return Satser.Values.Max(x => x.Kirke);
+    }
+
+    public static decimal LowesKirkeskat()
+    {
+        return Satser.Values.Min(x => x.Kirke);
+    }
+
+    public static decimal AverageKirkeskat()
+    {
+        return Satser.Values.Average(x => x.Kirke);
     }
 
     public static decimal HentNedslag(string kommunenavn)

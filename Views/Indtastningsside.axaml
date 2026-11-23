@@ -24,14 +24,19 @@
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="Løn før skat og AM-bidrag:"
                                VerticalAlignment="Center"/>
+                    
                     <TextBox x:Name="BruttoLoen"
-                             Grid.Column="1" Height="26" Width="110"/>
+                            Text="{Binding BruttoLoen}"
+                            Classes.invalid="{Binding !BruttoLoenErGyldig}"
+                            Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
                 <Grid ColumnDefinitions="*,82" ColumnSpacing="8">
                     <TextBlock Text="AM-bidrag:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="AMBidrag"
+                            Text="{Binding AMBidrag}"
+                            Classes.invalid="{Binding !AMBidragErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -39,6 +44,8 @@
                     <TextBlock Text="A-Skat:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="ASkat"
+                            Text="{Binding ASkat}"
+                            Classes.invalid="{Binding !ASkatErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -51,6 +58,8 @@
                     <TextBlock Text="A-kasse dagpenge:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="AKasseDagpenge"
+                            Text="{Binding AKasseDagpenge}"
+                            Classes.invalid="{Binding !AKasseDagpengeErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -58,6 +67,8 @@
                     <TextBlock Text="Feriedagpenge:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="Feriedagpenge"
+                            Text="{Binding Feriedagpenge}"
+                            Classes.invalid="{Binding !FeriedagpengeErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -65,6 +76,8 @@
                     <TextBlock Text="Sygedagpenge:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="Sygedagpenge"
+                            Text="{Binding Sygedagpenge}"
+                            Classes.invalid="{Binding !SygedagpengeErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -72,6 +85,8 @@
                     <TextBlock Text="Kontanthjælp:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="Kontanthjaelp"
+                            Text="{Binding Kontanthjaelp}"
+                            Classes.invalid="{Binding !KontanthjaelpErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -79,6 +94,8 @@
                     <TextBlock Text="Efterløn:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="Efterloen"
+                            Text="{Binding Efterloen}"
+                            Classes.invalid="{Binding !EfterloenErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -87,6 +104,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="SVU"
+                            Text="{Binding SVU}"
+                            Classes.invalid="{Binding !SVUErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -95,6 +114,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="SU"
+                            Text="{Binding SU}"
+                            Classes.invalid="{Binding !SUErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -115,6 +136,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="ArbejdsgiverPension"
+                            Text="{Binding ArbejdsgiverPension}"
+                            Classes.invalid="{Binding !ArbejdsgiverPensionErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -122,6 +145,8 @@
                     <TextBlock Text="ATP via arbejdsgiver:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="ATPAMBidragsPligt"
+                            Text="{Binding ATPAMBidragsPligt}"
+                            Classes.invalid="{Binding !ATPAMBidragsPligtErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -130,6 +155,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="ATPIkkeAMBidragsPligt"
+                            Text="{Binding ATPIkkeAMBidragsPligt}"
+                            Classes.invalid="{Binding !ATPIkkeAMBidragsPligtErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -138,6 +165,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="PensionsindbetalingAfBeskattedeMidler"
+                            Text="{Binding PensionsindbetalingAfBeskattedeMidler}"
+                            Classes.invalid="{Binding !PensionsindbetalingAfBeskattedeMidlerErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -151,6 +180,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="GruppelivsForsikring"
+                            Text="{Binding GruppelivsForsikring}"
+                            Classes.invalid="{Binding !GruppelivsForsikringErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -159,6 +190,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="LegaterOgPersonalegoder"
+                            Text="{Binding LegaterOgPersonalegoder}"
+                            Classes.invalid="{Binding !LegaterOgPersonalegoderErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -167,6 +200,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="IndskudAldersopsparingViaArbejdsgiver"
+                            Text="{Binding IndskudAldersopsparingViaArbejdsgiver}"
+                            Classes.invalid="{Binding !IndskudAldersopsparingViaArbejdsgiverErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -174,6 +209,8 @@
                     <TextBlock Text="Eventuelt andet:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="AndetPersonligIndkomst"
+                            Text="{Binding AndetPersonligIndkomst}"
+                            Classes.invalid="{Binding !AndetPersonligIndkomstErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -187,6 +224,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="Renteindtaegter"
+                            Text="{Binding Renteindtaegter}"
+                            Classes.invalid="{Binding !RenteindtaegterErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -207,6 +246,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="FitnessMusikskole"
+                            Text="{Binding FitnessMusikskole}"
+                            Classes.invalid="{Binding !FitnessMusikskoleErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -215,6 +256,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="AfstandArbejde"
+                            Text="{Binding AfstandArbejde}"
+                            Classes.invalid="{Binding !AfstandArbejdeErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -222,6 +265,8 @@
                     <TextBlock Text="Antal dage kørt på arbejde:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="AntalDageKoert"
+                            Text="{Binding AntalDageKoert}"
+                            Classes.invalid="{Binding !AntalDageKoertErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -229,6 +274,8 @@
                     <TextBlock Text="Kontingent til fagforening:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="KontingentFagforening"
+                            Text="{Binding KontingentFagforening}"
+                            Classes.invalid="{Binding !KontingentFagforeningErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -236,6 +283,8 @@
                     <TextBlock Text="Kontingent til A-kasse:"
                                VerticalAlignment="Center"/>
                     <TextBox x:Name="KontingentAKasse"
+                            Text="{Binding KontingentAKasse}"
+                            Classes.invalid="{Binding !KontingentAKasseErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -244,6 +293,8 @@
                                VerticalAlignment="Center"
                                TextWrapping="Wrap"/>
                     <TextBox x:Name="GaverTilForeninger"
+                            Text="{Binding GaverTilForeninger}"
+                            Classes.invalid="{Binding !GaverTilForeningerErGyldig}"
                              Grid.Column="1" Height="26" Width="110"/>
                 </Grid>
 
@@ -258,6 +309,9 @@
                                    TextWrapping="Wrap"/>
                         <ComboBox
                             x:Name="KommuneComboBox"
+                            ItemsSource="{Binding Kommunenavne}"
+                            SelectedItem="{Binding KommuneComboBox}"
+                            Classes.invalid="{Binding !KommuneComboBoxErGyldig}"
                             PlaceholderText="Vælg kommune"
                             Width="250"
                             HorizontalAlignment="Left"/>
@@ -268,8 +322,9 @@
                                    VerticalAlignment="Center"
                                    TextWrapping="Wrap"/>
                         <ComboBox x:Name="KirkeskatComboBox"
+                            Classes.invalid="{Binding !KirkeskatComboBoxErGyldig}"
                             ItemsSource="{Binding KirkeskatValgmuligheder}"
-                            SelectedItem="{Binding ValgtKirkeskat}"
+                            SelectedItem="{Binding KirkeskatComboBox}"
                             PlaceholderText="Vælg"
                             Width="250"
                             HorizontalAlignment="Left">
@@ -283,9 +338,10 @@
 
         <!--TextBlock udelukkende til at teste i stedet for at skrive til Console-->
         <TextBlock x:Name="lblResultat"
-                        IsVisible="False"
-                        Text="Test"
-                        FontSize="28"
+                        IsVisible="{Binding ResultVisible}"
+                        Text="{Binding Result}"
+                        Foreground="Red"
+                        FontSize="20"
                         FontWeight="Bold"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"/>
@@ -301,8 +357,9 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
                 Margin="0,20,0,0"
-                Click="VisAarsopgoerelse_Click"/>
-
+                Command="{Binding BeregnCommand}"/>
+<!-- Click="VisAarsopgoerelse_Click" -->
+                
     </Grid>
 
 </UserControl>
