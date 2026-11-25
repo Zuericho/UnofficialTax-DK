@@ -22,7 +22,7 @@ public partial class App : Application
                 DataContext = new MainViewModel(),
             };
 
-            mainWindow.VisIndtastningsside();
+            // mainWindow.VisIndtastningsside();
 
             desktop.MainWindow = mainWindow;
         }

@@ -1,7 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Aarsopgoerelse.ViewModels"
-             x:Class="Aarsopgoerelse.Views.Indtastningsside"
+             x:Class="Aarsopgoerelse.Views.IndtastningssideView"
              x:DataType="vm:IndtastningssideViewModel">
 
     <Grid Margin="55,90,55,55"
@@ -336,15 +336,6 @@
 
         </Grid>
 
-        <!--TextBlock udelukkende til at teste i stedet for at skrive til Console-->
-        <TextBlock x:Name="lblResultat"
-                        IsVisible="{Binding ResultVisible}"
-                        Text="{Binding Result}"
-                        Foreground="Red"
-                        FontSize="20"
-                        FontWeight="Bold"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"/>
         
         <!-- KNAP NEDERST TIL HØJRE -->
         <Button Grid.Row="1"
@@ -357,8 +348,7 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
                 Margin="0,20,0,0"
-                Command="{Binding BeregnCommand}"/>
-<!-- Click="VisAarsopgoerelse_Click" -->
+                Command="{Binding ToSide2Command}"/>
                 
     </Grid>
 

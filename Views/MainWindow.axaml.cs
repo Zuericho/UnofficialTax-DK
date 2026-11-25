@@ -10,13 +10,13 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
-    public void VisIndtastningsside()
-    {
-        var mainVM = (MainViewModel)DataContext!;
+    // public void VisIndtastningsside()
+    // {
+    //     var mainVM = (MainViewModel)DataContext!;
 
-        SideIndhold.Content = new Indtastningsside
-        {
-            DataContext = mainVM.IndtastningssideVM
-        };
-    }
+    //     SideIndhold.Content = new Indtastningsside
+    //     {
+    //         DataContext = mainVM.IndtastningssideVM
+    //     };
+    // }
 }

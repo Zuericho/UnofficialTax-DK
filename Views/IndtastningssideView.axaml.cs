@@ -8,10 +8,10 @@ using Aarsopgoerelse.ViewModels;
 
 namespace Aarsopgoerelse.Views;
 
-public partial class Indtastningsside : UserControl
+public partial class IndtastningssideView : UserControl
 {
 
-    public Indtastningsside()
+    public IndtastningssideView()
     {
         InitializeComponent();
 

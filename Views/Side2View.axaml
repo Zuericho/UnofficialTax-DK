@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Aarsopgoerelse.ViewModels"
+             x:DataType="vm:Side2ViewModel"
+             x:Class="Aarsopgoerelse.Views.Side2View">
+
+        <Grid>
+            <StackPanel HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Spacing="15">
+    <!--TextBlock udelukkende til at teste i stedet for at skrive til Console-->
+                <TextBlock IsVisible="{Binding ResultVisible}"
+                        Text="{Binding Result}"
+                        Foreground="Red"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Spacing="15">
+
+                <TextBlock Text="Dette er side 2"
+                       FontSize="24"/>
+                <Button Content="Tilbage til indtastningssiden"
+                    Command="{Binding ToIndtastningssideCommand}"/>
+
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Spacing="15">
+
+                <TextBlock Text="Sum af indtastede data:"
+                    FontSize="24"/>
+                <TextBlock Text="{Binding Sum}"
+                   FontSize="20"/>
+            </StackPanel>
+        </Grid>
+
+
+</UserControl>

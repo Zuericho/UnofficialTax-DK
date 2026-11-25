@@ -1,4 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Globalization;
 using System.Linq;
 using System.Collections.Generic;
@@ -11,6 +12,24 @@ namespace Aarsopgoerelse.ViewModels;
 
 public partial class IndtastningssideViewModel : ViewModelBase
 {
+    private readonly INavigationService _navigationService;
+
+    private readonly Data _userData;
+    private readonly Data _spouseData;
+    public IndtastningssideViewModel(INavigationService navigationService, Data userData, Data spouseData)
+    {
+        _navigationService = navigationService;
+        _userData = userData;
+        _spouseData = spouseData;
+    }
+
+    [RelayCommand]
+    private void ToSide2()
+    {
+        if(ValiderAlleFelter()){
+            _navigationService.NavigateTo<Side2ViewModel>();
+        }
+    }
     private readonly CultureInfo danskKultur =
     CultureInfo.GetCultureInfo("da-DK");
 
@@ -209,7 +228,7 @@ public partial class IndtastningssideViewModel : ViewModelBase
 
         if (valid)
         {
-            this.userData.SkatteTal[key] = tal;
+            _userData.SkatteTal[key] = tal;
             return true;
         }
         else
@@ -218,29 +237,13 @@ public partial class IndtastningssideViewModel : ViewModelBase
         }
     }
 
-    //Two test properties and one method for updating info on page insted of writing to console:
-    [ObservableProperty]
-    private string? result = null;
-
-    [ObservableProperty]
-    private bool resultVisible = false;
-
-    private void writeResult()
-    {
-        Result = "Bopæl: " + userData.Bopaelskommune + ", Kirkeskat: " + userData.Folkekirken + "\n";
-        foreach(KeyValuePair<string, decimal> felt in userData.SkatteTal)
-        {
-            Result += felt.Key + ": " + felt.Value + "\n";
-        }
-    }
-
     public void BeregnCommand()
     {
         if(ValiderAlleFelter())
         {
         //Logic to move on to next page. Remember to somehow parse this.userData!
-        writeResult();
-        ResultVisible = true;            
+        // writeResult();
+        // ResultVisible = true;            
         }
     }
 
@@ -277,7 +280,7 @@ public partial class IndtastningssideViewModel : ViewModelBase
         if (KommuneComboBox != null)
         {
             KommuneComboBoxErGyldig = true;
-            userData.Bopaelskommune = KommuneComboBox;
+            _userData.Bopaelskommune = KommuneComboBox;
             decimal kommuneskat = KommuneskatSatser.HentKommuneskat(KommuneComboBox);
             ValidateAndStoreDecimal(kommuneskat.ToString(),"Kommuneskat");
         }
@@ -290,7 +293,7 @@ public partial class IndtastningssideViewModel : ViewModelBase
         if (BetalerKirkeskat != null && KommuneComboBox != null)
         {
             KirkeskatComboBoxErGyldig = true;
-            userData.Folkekirken = BetalerKirkeskat;
+            _userData.Folkekirken = BetalerKirkeskat;
             if (BetalerKirkeskat.Value)
             {
                 kirkeskat = KommuneskatSatser.HentKirkeskat(KommuneComboBox);
@@ -306,7 +309,7 @@ public partial class IndtastningssideViewModel : ViewModelBase
             //Program shouldn't pass here since KommuneComboBox is null. This method should return false.
             // For precautionary reasons Kirkeskat defaults to highest value if BetalerKirkeskat is true.
             KirkeskatComboBoxErGyldig = true;
-            userData.Folkekirken = BetalerKirkeskat;
+            _userData.Folkekirken = BetalerKirkeskat;
             if (BetalerKirkeskat.Value)
             {
                 kirkeskat = KommuneskatSatser.HighestKirkeskat();

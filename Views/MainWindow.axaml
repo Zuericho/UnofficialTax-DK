@@ -15,6 +15,6 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <ContentControl x:Name="SideIndhold" />
+    <ContentControl Content="{Binding Navigation.CurrentViewModel}" />
 
 </Window>
